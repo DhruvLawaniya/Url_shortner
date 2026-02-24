@@ -14,6 +14,16 @@
             <p class="text-gray-500 text-center mb-8">Shorten links and track performance</p>
             
             <form action="/shorten" method="post" class="flex gap-2">
+                <!-- Public Notice Warning -->
+<div class="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
+    <!-- This is a small Info Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <p class="text-xs text-amber-800 leading-relaxed">
+        <strong>Privacy Notice:</strong> All shortened links are public. Anyone with access to this website(Basically anyone!!) can view the destination and click analytics. This website is for educational use only!
+    </p>
+</div>
                 <input type="url" name="url" required 
                     class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                     placeholder="https://example.com/very-long-link">
