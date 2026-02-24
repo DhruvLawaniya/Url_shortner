@@ -51,7 +51,7 @@ Added a deduplication layer that checks the database for existing long URLs befo
 Distributed under the MIT License. See LICENSE for more information.
 
 Contact
-Dhruv Lawaniya - Your LinkedIn Profile - your@email.com
+Dhruv Lawaniya - https://www.linkedin.com/in/dhruvlawaniya/
 Project Link: https://github.com/dhruvlawaniya/url-shortener
 
 
