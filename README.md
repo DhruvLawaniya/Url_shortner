@@ -1,4 +1,4 @@
-🔗 Shortify | URL Shortener
+🔗 Shortify | URL Shortener <br>
 ![alt text](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)
 
 ![alt text](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi)
@@ -33,58 +33,8 @@ Frontend	Jinja2, Tailwind CSS, HTML5
 Deployment	Render (CI/CD via GitHub)
 Dev Tools	Uvicorn, Pip, Virtualenv
 📸 Screenshots
-(Tip: Take a screenshot of your app and upload it to your repo to display it here)
-![alt text](https://via.placeholder.com/800x400?text=ZipLink+Dashboard+Preview)
 
-🔧 Local Setup
-Clone the repository:
 
-code
-Bash
-
-download
-
-content_copy
-
-expand_less
-git clone https://github.com/dhruvlawaniya/url-shortener.git
-cd url-shortener
-Create and activate a virtual environment:
-
-code
-Bash
-
-download
-
-content_copy
-
-expand_less
-python -m venv venv
-source venv/bin/activate  # Mac/Linux
-# venv\Scripts\activate   # Windows
-Install dependencies:
-
-code
-Bash
-
-download
-
-content_copy
-
-expand_less
-pip install -r requirements.txt
-Run the application:
-
-code
-Bash
-
-download
-
-content_copy
-
-expand_less
-uvicorn main:app --reload
-The app will be available at http://127.0.0.1:8000.
 
 🧠 Key Technical Challenges Solved
 
@@ -104,10 +54,4 @@ Contact
 Dhruv Lawaniya - Your LinkedIn Profile - your@email.com
 Project Link: https://github.com/dhruvlawaniya/url-shortener
 
-Steps to make this look great on GitHub:
-Add a screenshot: Take a screenshot of your live website, name it screenshot.png, upload it to your GitHub repo, and then update the link in the README.md.
-
-Fill in your links: Replace the placeholder LinkedIn and Email links at the bottom with your actual info.
-
-Update the Live Demo link: Ensure the link at the top points to your actual Render website.
 
