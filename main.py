@@ -6,10 +6,20 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
+import os
 # 1. Database Setup
-DATABASE_URL = "sqlite:///./test.db"
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+
+
+
+# Get database URL from environment variable, or use local sqlite for testing
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
+
+# If the URL starts with "postgres://", change it to "postgresql://" (Fix for SQLAlchemy)
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+engine = create_engine(DATABASE_URL)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
