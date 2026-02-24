@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortify | Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header & Form -->
+        <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+            <h1 class="text-4xl font-extrabold mb-2 text-blue-600 text-center">Shortify</h1>
+            <p class="text-gray-500 text-center mb-8">Shorten links and track performance</p>
+            
+            <form action="/shorten" method="post" class="flex gap-2">
+                <input type="url" name="url" required 
+                    class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                    placeholder="https://example.com/very-long-link">
+                <button type="submit" 
+                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+                    Shorten
+                </button>
+            </form>
+
+            {% if short_url %}
+            <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex justify-between items-center">
+                <div>
+                    <p class="text-sm text-blue-800 font-medium">Short Link Created:</p>
+                    <a href="{{ short_url }}" target="_blank" class="text-blue-600 font-bold text-lg">{{ short_url }}</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Analytics Table -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100">
+                <h2 class="text-xl font-bold text-gray-800">Your Links & Analytics</h2>
+            </div>
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-600 text-sm uppercase">
+                    <tr>
+                        <th class="px-6 py-4">Original URL</th>
+                        <th class="px-6 py-4 text-center">Clicks</th>
+                        <th class="px-6 py-4 text-right">Short Link</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    {% for item in history %}
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-6 py-4">
+                            <div class="text-sm text-gray-900 truncate max-w-xs">{{ item.long_url }}</div>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-bold text-sm">
+                                {{ item.clicks }} clicks
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a href="/{{ item.short_code }}" target="_blank" class="text-blue-500 hover:underline font-medium">
+                                /{{ item.short_code }}
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
